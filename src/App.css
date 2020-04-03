@@ -77,3 +77,7 @@
 ::-webkit-scrollbar-thumb {
   background: #71b9a9;
 }
+
+.footer {
+  font-family: "Poppins", sans-serif;
+}

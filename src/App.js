@@ -6,6 +6,7 @@ import "./App.css";
 import Scroll from "./components/Scroll";
 import SearchBox from "./components/SearchBox";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 class App extends React.Component {
   constructor() {
@@ -36,6 +37,7 @@ class App extends React.Component {
             <CardList fish={filteredFish} />
           </Scroll>
         </div>
+        <Footer />
       </div>
     );
   }
