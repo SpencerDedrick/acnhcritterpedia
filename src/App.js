@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import CardList from "./components/CardList";
+import { fish } from "./fish";
+import "tachyons";
+import "./App.css";
+import Scroll from "./components/Scroll";
+import SearchBox from "./components/SearchBox";
+import Header from "./components/Header";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      fish: fish,
+      searchfield: "",
+    };
+  }
+
+  onSearchChange = (event) => {
+    this.setState({ searchfield: event.target.value });
+    console.log(this.state.searchfield);
+  };
+
+  render() {
+    const { fish, searchfield } = this.state;
+    const filteredFish = fish.filter((fish) => {
+      return fish.name.toLowerCase().includes(searchfield.toLowerCase());
+    });
+    return (
+      <div className="tc app">
+        <Header>
+          <SearchBox searchChange={this.onSearchChange} />
+        </Header>
+        <div className="container">
+          <Scroll>
+            <CardList fish={filteredFish} />
+          </Scroll>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
