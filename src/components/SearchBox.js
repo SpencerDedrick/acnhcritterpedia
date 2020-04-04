@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchBox = ({ searchfield, searchChange }) => {
+const SearchBox = ({ searchfield, searchChange, filterReset }) => {
   return (
     <div>
       <input
@@ -8,6 +8,10 @@ const SearchBox = ({ searchfield, searchChange }) => {
         type="search"
         placeholder="search critter"
         onChange={searchChange}
+        onFocus={(e) => {
+          e.target.value = "";
+          filterReset();
+        }}
       />
     </div>
   );

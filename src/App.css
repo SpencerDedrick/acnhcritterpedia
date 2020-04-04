@@ -6,10 +6,27 @@
   margin: 0;
   box-sizing: border-box;
 }
+.app {
+  background: linear-gradient(
+    to bottom,
+    rgba(88, 188, 167, 0),
+    rgba(88, 188, 167, 1)
+  );
+  width: 65%;
+  margin: auto;
+  height: 100vh;
+  overflow-y: hidden;
+  border-radius: 25px;
+  border: 3px solid #f8f5e6;
+}
 
 .header {
   overflow: hidden;
-  background: #71b9a9;
+  background: linear-gradient(
+    to bottom,
+    rgba(88, 188, 167, 0.2),
+    rgba(88, 188, 167, 0.9)
+  );
   color: #f8f5e6;
   font-family: "Alegreya", serif;
   top: 0;
@@ -17,16 +34,18 @@
   margin: auto;
   padding: 10px;
   text-align: center;
-}
-.app {
-  background: rgb(248, 245, 230);
-  width: 90%;
-  margin: auto;
-  height: 100vh;
+  border-bottom: 3px solid #f8f5e6;
 }
 
 .header h1 {
   font-size: 40px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 25%;
+  margin: auto;
 }
 
 .searchbox {
@@ -39,21 +58,21 @@
   font-size: 20px;
 }
 .cardList {
-  background: rgb(248, 245, 230);
+  background: none;
   width: 90%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: baseline;
+  padding-bottom: 100px;
 }
 .card {
   font-family: "Poppins", sans-serif;
-  border: 1px solid #bfb699;
   box-shadow: 0px 3px 0 #bfb699;
   width: auto;
   min-width: 175px;
-  padding: 10px;
+  min-height: 100px;
   background: #f0f0f0;
   font-size: 13px;
 }
@@ -63,6 +82,31 @@
   transform: translateY(3px);
   box-shadow: 0 0 0 transparent;
   cursor: pointer;
+  border: none;
+}
+
+button {
+  color: #f8f5e6;
+  font-size: 30px;
+  background-color: #22515c;
+  border: 1px solid #00333e;
+  box-shadow: 0px 3px 0 #00333e;
+  display: block;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  margin: auto;
+  outline: none;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #2f8888;
+  transform: translateY(3px);
+  box-shadow: 0 0 0 transparent;
+  cursor: pointer;
+  border: none;
 }
 
 /* width */
@@ -77,11 +121,89 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #71b9a9;
+  background: #f8f5e6;
 }
 
 .footer {
   font-family: "Poppins", sans-serif;
   background: rgb(248, 245, 230);
   width: 90%;
+}
+
+.cardName {
+  background: #22515c;
+  color: #f0f0f0;
+  font-size: 0.9rem;
+  width: 100%;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.cardName h2 {
+  padding: 7px;
+}
+
+.cardInfo {
+  margin: auto;
+  margin-top: 5px;
+  max-width: 200px;
+}
+
+.cardInfo h2 {
+  padding-left: 5px;
+  padding-right: 5px;
+  word-wrap: normal;
+}
+.cardInfo i {
+  font-size: 0.7rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .app {
+    max-width: 100%;
+    width: 100vw;
+  }
+
+  .header {
+    height: 20%;
+  }
+
+  .header h1 {
+    display: none;
+  }
+
+  .searchbox {
+    font-size: 30px;
+    margin-top: 15px;
+  }
+
+  button {
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    margin-bottom: ;
+  }
+
+  .card {
+    width: 25%;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .card {
+    max-width: 25%;
+    min-width: 125px;
+    word-wrap: normal;
+  }
+  .buttonContainer {
+    width: 100vw;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .buttonContainer {
+    width: 50vw;
+    justify-content: space-between;
+  }
 }

@@ -14,27 +14,96 @@ class App extends React.Component {
     this.state = {
       fish: fish,
       searchfield: "",
+      filteredList: fish,
+      mode: "all",
     };
   }
 
-  onSearchChange = (event) => {
-    this.setState({ searchfield: event.target.value });
-    console.log(this.state.searchfield);
+  onComponentLoad() {
+    this.setState({ filteredList: this.state.fish });
+  }
+
+  onSearchChange = async (event) => {
+    await this.setState({ searchfield: event.target.value });
+    const filteredFish = fish.filter((fish) => {
+      return fish.name
+        .toLowerCase()
+        .includes(this.state.searchfield.toLowerCase());
+    });
+    this.setState({ filteredList: filteredFish });
+  };
+
+  filterReset = () => {
+    let newList;
+    newList = this.state.fish.sort(function (a, b) {
+      var textA = a.id;
+      var textB = b.id;
+      return textA < textB ? -1 : textA > textB ? 1 : 0;
+    });
+    this.setState({ filteredList: newList });
+  };
+
+  filterFish = () => {
+    this.filterReset();
+    let fishList;
+    fishList = fish.filter((fish) => {
+      return fish.type === "fish";
+    });
+    this.setState({ filteredList: fishList });
+  };
+
+  filterBugs = () => {
+    this.filterReset();
+    let bugList;
+    bugList = fish.filter((fish) => {
+      return fish.type === "bug";
+    });
+    this.setState({ filteredList: bugList });
+  };
+
+  filterAlpha = () => {
+    this.filterReset();
+    let newList;
+    newList = this.state.filteredList.sort(function (a, b) {
+      var textA = a.name.toUpperCase();
+      var textB = b.name.toUpperCase();
+      return textA < textB ? -1 : textA > textB ? 1 : 0;
+    });
+    this.setState({ filteredList: newList });
+  };
+
+  filterValue = () => {
+    this.filterReset();
+    let newList;
+    newList = this.state.filteredList.sort(function (a, b) {
+      var valueA = Number(a.value);
+      var valueB = Number(b.value);
+      return valueA < valueB ? -1 : valueA > valueB ? 1 : 0;
+    });
+    this.setState({ filteredList: newList });
   };
 
   render() {
-    const { fish, searchfield } = this.state;
-    const filteredFish = fish.filter((fish) => {
-      return fish.name.toLowerCase().includes(searchfield.toLowerCase());
-    });
+    const { filteredList } = this.state;
+
     return (
       <div className="tc app">
-        <Header>
-          <SearchBox searchChange={this.onSearchChange} />
+        <Header
+          className="tc"
+          filterFish={this.filterFish}
+          filterBugs={this.filterBugs}
+          filterReset={this.filterReset}
+          filterAlpha={this.filterAlpha}
+          filterValue={this.filterValue}
+        >
+          <SearchBox
+            searchChange={this.onSearchChange}
+            filterReset={this.filterReset}
+          />
         </Header>
         <div className="container">
           <Scroll>
-            <CardList fish={filteredFish} />
+            <CardList fish={filteredList} />
           </Scroll>
         </div>
         <Footer />
