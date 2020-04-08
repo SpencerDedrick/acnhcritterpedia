@@ -365,31 +365,7 @@ export const fish = [
     value: "160",
     time: "4AM - 7PM",
   },
-  {
-    id: "169",
-    name: "Conch",
-    image:
-      "https://gamepedia.cursecdn.com/animalcrossingpocketcamp_gamepedia_en/thumb/e/ed/Conch_Shell.png/120px-Conch_Shell.png?version=820b9484f8c2f4d9162cbf420f35522b",
-    location: "On beach",
-    type: "shell",
-    value: "700",
-  },
-  {
-    id: "165",
-    name: "Coral",
-    image:
-      "https://gamepedia.cursecdn.com/animalcrossingpocketcamp_gamepedia_en/thumb/b/b1/Coral.png/120px-Coral.png?version=446ee566a5b2393be106d97660c7ef9e",
-    location: "On beach",
-    type: "shell",
-    value: "500",
-  },
-  {
-    id: "164",
-    name: "Cowrie",
-    location: "On beach",
-    type: "shell",
-    value: "60",
-  },
+
   {
     id: "63",
     name: "Crawfish",
@@ -640,13 +616,6 @@ export const fish = [
     type: "bug",
     value: "500",
     time: "8AM - 5PM",
-  },
-  {
-    id: "168",
-    name: "Giant Clam",
-    location: "On beach",
-    type: "shell",
-    value: "900",
   },
   {
     id: "1",
@@ -986,13 +955,6 @@ export const fish = [
     type: "bug",
     value: "1000",
     time: "7PM - 8AM",
-  },
-  {
-    id: "162",
-    name: "Manila Clam",
-    location: "On beach",
-    type: "shell",
-    value: "100",
   },
   {
     id: "103",
@@ -1441,13 +1403,7 @@ export const fish = [
     time: "All day",
     shadow: "Small",
   },
-  {
-    id: "167",
-    name: "Sand Dollar",
-    location: "On beach",
-    type: "shell",
-    value: "120",
-  },
+
   {
     id: "66",
     name: "Saw Shark",
@@ -1527,13 +1483,7 @@ export const fish = [
     time: "All day",
     shadow: "Smallest",
   },
-  {
-    id: "166",
-    name: "Sea Snail",
-    location: "On beach",
-    type: "shell",
-    value: "180",
-  },
+
   {
     id: "156",
     name: "Snail",
@@ -1728,13 +1678,7 @@ export const fish = [
     time: "All day",
     shadow: "X Large",
   },
-  {
-    id: "163",
-    name: "Venus Comb",
-    location: "On beach",
-    type: "shell",
-    value: "300",
-  },
+
   {
     id: "130",
     name: "Violin beetle",

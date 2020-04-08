@@ -14,7 +14,12 @@ const CardList = ({ fish }) => {
       />
     );
   });
-  return <div className="cardList br3">{cardsArray}</div>;
+  return (
+    <div className="cardList ">
+      <div></div>
+      {cardsArray}
+    </div>
+  );
 };
 
 export default CardList;

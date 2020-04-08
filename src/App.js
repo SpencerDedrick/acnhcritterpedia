@@ -101,12 +101,11 @@ class App extends React.Component {
             filterReset={this.filterReset}
           />
         </Header>
-        <div className="container">
-          <Scroll>
-            <CardList fish={filteredList} />
-          </Scroll>
-        </div>
-        <Footer />
+
+        <Scroll>
+          <CardList fish={filteredList} />
+        </Scroll>
+        {/*        <Footer /> */}
       </div>
     );
   }

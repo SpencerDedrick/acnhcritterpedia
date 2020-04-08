@@ -3,12 +3,8 @@ import React from "react";
 const Header = (props) => {
   return (
     <div className="header">
-      <h1>
-        <i class="fas fa-bell"></i> Critterpedia <i class="fas fa-bell"></i>
-      </h1>
-
       {props.children}
-      <div className="buttonContainer">
+      {/*       <div className="buttonContainer">
         <button onClick={props.filterFish}>
           <i class="fas fa-fish"></i>
         </button>
@@ -24,7 +20,7 @@ const Header = (props) => {
         <button onClick={props.filterValue}>
           <i className="fas fa-dollar-sign"></i>
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

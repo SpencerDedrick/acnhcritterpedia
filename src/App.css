@@ -7,38 +7,32 @@
   box-sizing: border-box;
 }
 .app {
-  background: linear-gradient(
-    to bottom,
-    rgba(88, 188, 167, 0),
-    rgba(88, 188, 167, 1)
-  );
-  width: 65%;
+  background: #dcd4b0;
+  width: 80%;
   margin: auto;
   height: 100vh;
   overflow-y: hidden;
-  border-radius: 25px;
-  border: 3px solid #f8f5e6;
 }
 
 .header {
   overflow: hidden;
-  background: linear-gradient(
-    to bottom,
-    rgba(88, 188, 167, 0.2),
-    rgba(88, 188, 167, 0.9)
-  );
   color: #f8f5e6;
   font-family: "Alegreya", serif;
   top: 0;
   width: 100%;
   margin: auto;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
-  border-bottom: 3px solid #f8f5e6;
+  border-bottom: 1px solid #9d956a;
 }
 
 .header h1 {
   font-size: 40px;
+}
+
+.header i {
+  font-size: 25px;
+  padding: 5px;
 }
 
 .buttonContainer {
@@ -49,40 +43,68 @@
 }
 
 .searchbox {
-  border-radius: 25px;
-  padding: 5px 5px;
+  padding: 10px 10px;
   border: 2px solid #bfb699;
   box-shadow: 0px 3px 0 #bfb699;
   background-color: #f0f0f0;
   outline: none;
   font-size: 20px;
 }
+
+/* cardList styles #dcd4b0*/
 .cardList {
-  background: none;
-  width: 90%;
-  margin: auto;
+  background: #dcd4b0;
+  width: 100%;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: baseline;
   padding-bottom: 100px;
+  padding-top: 30px;
 }
+
+/* card styles #dcd4b0*/
 .card {
   font-family: "Poppins", sans-serif;
-  box-shadow: 0px 3px 0 #bfb699;
-  width: auto;
-  min-width: 175px;
-  min-height: 100px;
-  background: #f0f0f0;
+  height: 180px;
+  min-width: 150px;
+  background: none;
   font-size: 13px;
+  border: 1px solid #9d956a;
 }
 
 .card:hover {
-  background-color: #e5dbbc;
-  transform: translateY(3px);
-  box-shadow: 0 0 0 transparent;
   cursor: pointer;
-  border: none;
+  background: #ede19d;
+}
+
+.cardValue {
+  margin: auto;
+  margin-top: 5px;
+  max-width: 200px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.card .cardName {
+  visibility: hidden;
+  width: 150;
+  font-size: 20px;
+  background-color: #ecf0d9;
+  border: 1px solid brown;
+  color: black;
+  text-align: center;
+  padding: 10px 10px;
+  position: absolute;
+  margin-left: -180px;
+  margin-top: -10px;
+  z-index: 1;
+  transform: rotate(-30deg);
+}
+
+.card:hover .cardName {
+  visibility: visible;
 }
 
 button {
@@ -111,12 +133,12 @@ button:hover {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 20px;
+  width: auto;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: none;
+  background: #dcd4b0;
 }
 
 /* Handle */
@@ -128,34 +150,6 @@ button:hover {
   font-family: "Poppins", sans-serif;
   background: rgb(248, 245, 230);
   width: 90%;
-}
-
-.cardName {
-  background: #22515c;
-  color: #f0f0f0;
-  font-size: 0.9rem;
-  width: 100%;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-}
-
-.cardName h2 {
-  padding: 7px;
-}
-
-.cardInfo {
-  margin: auto;
-  margin-top: 5px;
-  max-width: 200px;
-}
-
-.cardInfo h2 {
-  padding-left: 5px;
-  padding-right: 5px;
-  word-wrap: normal;
-}
-.cardInfo i {
-  font-size: 0.7rem;
 }
 
 @media only screen and (max-width: 1000px) {

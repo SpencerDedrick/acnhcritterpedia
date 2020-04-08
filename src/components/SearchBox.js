@@ -6,13 +6,14 @@ const SearchBox = ({ searchfield, searchChange, filterReset }) => {
       <input
         className="searchbox"
         type="search"
-        placeholder="search critter"
+        placeholder="search critter "
         onChange={searchChange}
         onFocus={(e) => {
           e.target.value = "";
           filterReset();
         }}
       />
+      <i class="fas fa-search"></i>
     </div>
   );
 };
