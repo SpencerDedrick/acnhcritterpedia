@@ -5,6 +5,7 @@
 }
 
 html {
+  overflow: hidden;
   background-size: 90px 90px;
   background-color: #245561;
   background-image: linear-gradient(
